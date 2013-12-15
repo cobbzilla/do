@@ -1,0 +1,20 @@
+#!/bin/bash
+
+. ${HOME}/.digitalocean
+
+if [ -z "${DO_CLIENT_ID}" ] ; then
+  echo "No DO_CLIENT_ID defined in environment"
+  exit 1
+fi
+
+if [ -z "${DO_API_KEY}" ] ; then
+  echo "No DO_API_KEY defined in environment"
+  exit 1
+fi
+
+if [ -z "${1}" ] ; then
+  echo "No command specified"
+  exit 1
+fi
+
+$(dirname $0)/_do.py ${DO_CLIENT_ID} ${DO_API_KEY} "$@"

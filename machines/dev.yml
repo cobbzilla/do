@@ -1,0 +1,6 @@
+size_id: 2GB
+image_id: Ubuntu 13.10 x64
+region_id: New York 2
+ssh_key_ids: [ dev ]
+virtio: false
+private_networking: false
