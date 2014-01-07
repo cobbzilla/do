@@ -93,6 +93,7 @@ This will only work if you bootstrapped the droplet using "do bootstrap":
 
 ##### Destroy a droplet
 !!! **There is no "are you sure" asked here, your droplet WILL BE DESTROYED when you hit Enter** !!!
+Note that this *does* pass the "scrub_data" parameter when calling the destroy API, so your disks will be wiped clean. This avoids an otherwise inherent security flaw that would allow the next person who uses the same underlying hardware to read your data from the raw disk.
 
         do destroy nginx14
 

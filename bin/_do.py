@@ -220,7 +220,9 @@ elif command == "destroy":
     id = find_droplet_id(auth, name)
     if id is None:
         print "No droplet found with name " + name
-    print requests.get(API_BASE+'/droplets/' + str(id) + '/destroy', params=auth).text
+    destroy_params = []
+    destroy_params['scrub_data'] = 'true'
+    print requests.get(API_BASE+'/droplets/' + str(id) + '/destroy', params=dict(destroy_params.items() + auth.items()).text
 
 elif command == "bootstrap":
     if len(args) != 3:
